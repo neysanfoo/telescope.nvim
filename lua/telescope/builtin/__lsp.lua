@@ -93,7 +93,7 @@ local function calls(opts, direction)
   local params = client_position_params()
   vim.lsp.buf_request(opts.bufnr, "textDocument/prepareCallHierarchy", params, function(err, result)
     if err then
-      vim.api.nvim_err_writeln("Error when preparing call hierarchy: " .. err)
+      vim.api.nvim_err_writeln("Error when preparing call hierarchy: " .. err.message)
       return
     end
 
